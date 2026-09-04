@@ -17178,7 +17178,7 @@ const {
     formToJSON: kI,
     getAdapter: bI,
     mergeConfig: EI
-} = Ye, fA = "http://localhost:3000", xe = Ye.create({
+} = Ye, fA = "https://clutch-racing-backend-production.up.railway.app", xe = Ye.create({
     baseURL: fA
 });
 xe.interceptors.request.use(e => {
@@ -18446,7 +18446,7 @@ function _A() {
         children: [d.jsx(PA, {}), d.jsx(LA, {}), d.jsx(MA, {})]
     })
 }
-const FA = "http://localhost:3000";
+const FA = "https://clutch-racing-backend-production.up.railway.app";
 async function VA(e, t) {
     var n, i, o, l;
     try {
@@ -18861,7 +18861,7 @@ Pw.propTypes = {
     onLoginSuccess: ge.func.isRequired,
     onLoginError: ge.func.isRequired
 };
-const Hy = "http://localhost:3000";
+const Hy = "https://clutch-racing-backend-production.up.railway.app";
 async function Iw(e) {
     try {
         const t = e ? `${Hy}/api/discord-auth/authorize?redirect=${encodeURIComponent(e)}` : `${Hy}/api/discord-auth/authorize`,
