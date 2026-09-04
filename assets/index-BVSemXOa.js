@@ -17340,7 +17340,7 @@ const _r = [.22, 1, .36, 1],
         }
     },
     Eh = "https://discord.gg/ClutchRacing",
-    Nh = "https://ClutchRacing.tebex.io/";
+    Nh = "https://campinasroleplay.centralcart.ai/";
 var md = {
         exports: {}
     },
