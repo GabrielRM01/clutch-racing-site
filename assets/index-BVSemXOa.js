@@ -17738,7 +17738,7 @@ function bA() {
                         })]
                     }), d.jsx("p", {
                         className: "footer-tagline",
-                        children: "Servidor de roleplay automotivo de qualidade desde 2024"
+                        children: "O melhor lugar pra você que tem uma embreagem no lugar do coração"
                     })]
                 }), d.jsxs("div", {
                     className: "footer-links",
@@ -17990,7 +17990,7 @@ function PA() {
                 }), d.jsx(Ne.p, {
                     className: "hero-description",
                     variants: kt,
-                    children: "O roleplay automotivo mais imersivo do Brasil. Histórias reais, uma comunidade apaixonada por carros e uma cidade viva esperando por você."
+                    children: "O servidor de GTA RP automotivo mais imersivo do Brasil, com diversos recursos únicos e a sensação de estar na vida real dentro do FiveM."
                 }), d.jsxs(Ne.div, {
                     className: "hero-actions",
                     variants: kt,
