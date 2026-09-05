@@ -5,7 +5,7 @@
    Reverter: remova o <link> deste arquivo no index.html.
    ===================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Kanit:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ---------- Tokens ---------- */
 :root {
@@ -48,7 +48,7 @@
 
 /* ---------- Tipografia ---------- */
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.011em;
 }
@@ -66,15 +66,15 @@ body {
 .fases-manager-title,
 .situational-title,
 .section-title {
-  font-family: 'Orbitron', 'Inter', sans-serif;
+  font-family: 'Kanit', 'Geist', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   line-height: 1.08;
 }
 
-.hero-title { font-size: clamp(2.4rem, 7vw, 5rem); line-height: 1.02; letter-spacing: 0.01em; font-weight: 800; }
-.whitelist-title, .rules-article-title { font-size: clamp(1.9rem, 5vw, 3.1rem); }
+.hero-title { font-size: clamp(2.6rem, 8vw, 5.5rem); line-height: 1; letter-spacing: 0.005em; font-weight: 800; }
+.whitelist-title, .rules-article-title { font-size: clamp(2rem, 5.5vw, 3.4rem); }
 
 .section-number, .whitelist-number, .feature-number, .rules-nav-num,
 .dash-mono, .dash-stat-label, .hero-label, .wl-intro-label, .tour-help-eyebrow,
