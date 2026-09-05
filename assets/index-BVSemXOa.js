@@ -18230,23 +18230,6 @@ function LA() {
                         className: "feature-line"
                     })]
                 }, e.number))
-            }), d.jsx(Ne.div, {
-                className: "stats-grid",
-                variants: Dr(.15),
-                initial: "hidden",
-                whileInView: "show",
-                viewport: vl,
-                children: DA.map(e => d.jsxs(Ne.div, {
-                    className: "stat-item",
-                    variants: kt,
-                    children: [d.jsx("span", {
-                        className: "stat-number",
-                        children: e.node
-                    }), d.jsx("span", {
-                        className: "stat-label",
-                        children: e.label
-                    })]
-                }, e.label))
             })]
         })
     })
