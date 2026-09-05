@@ -19632,7 +19632,15 @@ function $A() {
                             children: [d.jsx("label", {
                                 className: "form-label",
                                 children: C.label
-                            }), d.jsx("div", {
+                            }), C.tipo === "aberta" ? d.jsx("textarea", {
+                                className: "form-input",
+                                rows: 4,
+                                placeholder: "Digite sua resposta...",
+                                value: N[C._id] || "",
+                                onChange: q => P(K => ({ ...K,
+                                    [C._id]: q.target.value
+                                }))
+                            }) : d.jsx("div", {
                                 className: "radio-options",
                                 children: C.opcoes.map(q => d.jsxs("label", {
                                     className: "radio-label",
@@ -31713,18 +31721,22 @@ function nI() {
                 i("Dê um texto à pergunta.", "warning");
                 return
             }
-            if (!P.opcoes.some(F => F.correta)) {
-                i("Marque a opção correta.", "warning");
-                return
-            }
-            if (P.opcoes.filter(F => F.texto.trim()).length < 2) {
-                i("Precisa de ao menos 2 opções.", "warning");
-                return
+            const Xa = P.tipo === "aberta";
+            if (!Xa) {
+                if (!P.opcoes.some(F => F.correta)) {
+                    i("Marque a opção correta.", "warning");
+                    return
+                }
+                if (P.opcoes.filter(F => F.texto.trim()).length < 2) {
+                    i("Precisa de ao menos 2 opções.", "warning");
+                    return
+                }
             }
             const A = {
                 label: P.label,
                 ativo: P.ativo,
-                opcoes: P.opcoes.map(F => ({
+                tipo: P.tipo || "multipla",
+                opcoes: Xa ? [] : P.opcoes.map(F => ({
                     texto: F.texto,
                     correta: F.correta
                 }))
@@ -31745,6 +31757,7 @@ function nI() {
         k = () => l(P => [...P, {
             label: "",
             ativo: !0,
+            tipo: "multipla",
             opcoes: [{
                 texto: "",
                 correta: !0
@@ -31797,6 +31810,32 @@ function nI() {
                     placeholder: "Texto da pergunta",
                     disabled: !n
                 }), d.jsxs("div", {
+                    className: "formed-tipo",
+                    children: [d.jsxs("label", {
+                        children: [d.jsx("input", {
+                            type: "radio",
+                            name: `tipo-${P._id||A}`,
+                            checked: P.tipo !== "aberta",
+                            onChange: () => h(A, {
+                                tipo: "multipla"
+                            }),
+                            disabled: !n
+                        }), " Múltipla escolha"]
+                    }), d.jsxs("label", {
+                        children: [d.jsx("input", {
+                            type: "radio",
+                            name: `tipo-${P._id||A}`,
+                            checked: P.tipo === "aberta",
+                            onChange: () => h(A, {
+                                tipo: "aberta"
+                            }),
+                            disabled: !n
+                        }), " Resposta aberta"]
+                    })]
+                }), P.tipo === "aberta" ? d.jsx("p", {
+                    className: "formed-aberta-hint",
+                    children: "Resposta em texto livre — não é corrigida automaticamente; fica visível para revisão manual da staff em Avaliação."
+                }) : d.jsxs("div", {
                     className: "formed-opcoes",
                     children: [P.opcoes.map((I, F) => d.jsxs("div", {
                         className: `formed-opc ${I.correta?"correta":""}`,
@@ -32134,6 +32173,16 @@ function iI() {
                         }), I.narrativa && d.jsxs("p", {
                             className: "aval-narrativa",
                             children: [I.narrativa, I.narrativa.length >= 600 ? "…" : ""]
+                        }), (I.respostasAbertas || []).length > 0 && d.jsx("div", {
+                            className: "aval-abertas",
+                            children: I.respostasAbertas.map((Ya, Za) => d.jsxs("div", {
+                                className: "aval-aberta-item",
+                                children: [d.jsx("strong", {
+                                    children: Ya.pergunta
+                                }), d.jsx("p", {
+                                    children: Ya.resposta || "(sem resposta)"
+                                })]
+                            }, Za))
                         })]
                     })]
                 }, I._id)
