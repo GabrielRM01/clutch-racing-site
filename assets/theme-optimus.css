@@ -5,7 +5,7 @@
    Reverter: remova o <link> deste arquivo no index.html.
    ===================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ---------- Tokens ---------- */
 :root {
@@ -66,14 +66,15 @@ body {
 .fases-manager-title,
 .situational-title,
 .section-title {
-  font-family: 'Instrument Serif', Georgia, serif;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.04;
+  font-family: 'Orbitron', 'Inter', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.08;
 }
 
-.hero-title { font-size: clamp(3rem, 9vw, 6.5rem); line-height: .98; letter-spacing: -0.035em; }
-.whitelist-title, .rules-article-title { font-size: clamp(2.4rem, 6vw, 4rem); }
+.hero-title { font-size: clamp(2.4rem, 7vw, 5rem); line-height: 1.02; letter-spacing: 0.01em; font-weight: 800; }
+.whitelist-title, .rules-article-title { font-size: clamp(1.9rem, 5vw, 3.1rem); }
 
 .section-number, .whitelist-number, .feature-number, .rules-nav-num,
 .dash-mono, .dash-stat-label, .hero-label, .wl-intro-label, .tour-help-eyebrow,
