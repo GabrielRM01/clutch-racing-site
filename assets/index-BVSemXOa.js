@@ -17475,16 +17475,12 @@ const SA = [{
         num: "02",
         label: "CONECTAR"
     }, {
-        to: "/equipe",
-        num: "03",
-        label: "EQUIPE"
-    }, {
         to: "/regras",
-        num: "04",
+        num: "03",
         label: "REGRAS"
     }, {
         href: Nh,
-        num: "05",
+        num: "04",
         label: "LOJA",
         external: !0
     }],
@@ -17785,12 +17781,6 @@ function bA() {
                                     to: "/conectar",
                                     className: "footer-link",
                                     children: "Conectar"
-                                })
-                            }), d.jsx("li", {
-                                children: d.jsx(Cn, {
-                                    to: "/equipe",
-                                    className: "footer-link",
-                                    children: "Equipe"
                                 })
                             })]
                         })]
@@ -18284,20 +18274,13 @@ const xd = [{
         cta: "COMO ENTRAR"
     }, {
         num: "04",
-        title: "EQUIPE",
-        desc: "Conheça o projeto e a equipe por trás do Clutch Racing.",
-        type: "internal",
-        to: "/equipe",
-        cta: "CONHECER"
-    }, {
-        num: "05",
         title: "LOJA",
         desc: "Apoie o servidor com pacotes VIP e vantagens exclusivas.",
         type: "external",
         href: Nh,
         cta: "ABRIR LOJA"
     }, {
-        num: "06",
+        num: "05",
         title: "DISCORD",
         desc: "Entre na nossa comunidade e fique por dentro de tudo.",
         type: "external",
@@ -32216,9 +32199,6 @@ function sI() {
                 }), d.jsx(ut, {
                     path: "/conectar",
                     element: d.jsx(y9, {})
-                }), d.jsx(ut, {
-                    path: "/equipe",
-                    element: d.jsx(v9, {})
                 }), d.jsx(ut, {
                     path: "/staff/callback",
                     element: d.jsx(x9, {})
