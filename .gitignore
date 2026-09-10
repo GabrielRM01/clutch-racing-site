@@ -1,4 +1,7 @@
-assets/*.bak
-assets/*.prelogo
+node_modules/
+dist/
+.env
+.env.local
+*.local
+.DS_Store
 whitelist.sql
-whitelist.html

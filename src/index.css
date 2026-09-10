@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* CentralCart-inspired identity */
+  --primary: 216 100% 50%;   /* azul vívido */
+  --secondary: 238 96% 49%;  /* índigo */
+  --background: 9 9 11;       /* zinc-950 */
+  --foreground: 250 250 250;
+  --card: 12 12 14;
+  --border: 38 38 42;
+  --muted: 20 20 23;
+  --muted-foreground: 161 161 170;
+  --muted-solid: 16 16 18;
+  --radius: 0.6rem;
+}
+
+@layer base {
+  * {
+    border-color: rgb(var(--border) / 1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Kanit', 'Geist', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  input, select, textarea {
+    background-color: rgb(var(--background));
+    border: 1px solid rgb(var(--foreground) / 0.1);
+    border-radius: var(--radius);
+    color: rgb(var(--foreground));
+    font-size: 0.875rem;
+  }
+
+  input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--primary));
+  }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: #fff;
+  }
+}
+
+@layer components {
+  .container-cc {
+    @apply mx-auto w-full max-w-[1400px] px-4;
+  }
+
+  .btn {
+    @apply inline-flex h-9 items-center justify-center gap-2 rounded-cc px-4 text-sm font-semibold
+    transition-colors disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary { @apply btn bg-primary text-white hover:bg-primary/85; }
+  .btn-secondary { @apply btn border border-border bg-white/5 hover:bg-white/10; }
+  .btn-outline { @apply btn border border-white/10 bg-transparent hover:bg-white/5; }
+  .btn-ghost { @apply btn bg-transparent hover:bg-white/5; }
+  .btn-danger { @apply btn bg-red-500/90 text-white hover:bg-red-500; }
+
+  .card-cc {
+    @apply rounded-[0.7rem] border border-white/10 bg-white/[0.02] backdrop-blur-sm;
+  }
+
+  .field {
+    @apply h-10 w-full rounded-cc border border-white/10 bg-background px-3 text-sm
+    placeholder:text-muted-foreground focus-visible:shadow-[0_0_0_2px_hsl(var(--primary))];
+  }
+  .label-cc {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary;
+  }
+}
+
+/* Fundo: grade + blobs */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 65% 80% at 40% 20%, #000 0%, transparent 100%);
+  mask-image: radial-gradient(ellipse 65% 80% at 40% 20%, #000 0%, transparent 100%);
+}
+
+/* Emblema */
+.emblem svg { width: 100%; height: auto; overflow: visible; }
+.emblem path {
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  fill-rule: evenodd;
+}
+
+/* Scrollbar sutil */
+.thin-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+.thin-scroll::-webkit-scrollbar-thumb { background: hsl(var(--primary)); border-radius: 4px; }
+.thin-scroll::-webkit-scrollbar-track { background: transparent; }
+
+/* Markdown das regras */
+.md-body { @apply text-[0.95rem] leading-7 text-muted-foreground; }
+.md-body h1, .md-body h2, .md-body h3 { @apply mt-8 mb-3 text-foreground; }
+.md-body h1 { @apply text-2xl; }
+.md-body h2 { @apply text-xl; }
+.md-body h3 { @apply text-lg; }
+.md-body p { @apply my-3; }
+.md-body ul { @apply my-3 list-disc space-y-1.5 pl-5; }
+.md-body ol { @apply my-3 list-decimal space-y-1.5 pl-5; }
+.md-body strong { @apply font-semibold text-foreground; }
+.md-body a { @apply text-primary hover:underline; }
+.md-body code { @apply rounded bg-white/10 px-1.5 py-0.5 text-sm; }
+.md-body hr { @apply my-6 border-white/10; }
